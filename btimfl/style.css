@@ -1,0 +1,276 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------STYLING----------------------------- */
+
+/*-------colors-----------*/
+
+body{
+    background-color: rgb(255, 244, 214);
+    /* border:2px solid red; */
+}
+
+header{
+    background-color:#ffb973;
+}
+/* 
+.container-one{
+    border: 2px solid hotpink;
+}
+
+.container-two{
+    border: 2px solid hotpink;
+}
+
+img, p{
+    border: 1px solid blue;
+} */
+
+/*----------font-------*/
+
+h1{
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(69,60,61);
+}
+
+.love, .life{
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bold;
+    
+}
+
+.wrapper{
+    color: rgb(69,60,61); 
+}
+
+
+/* --------------------------LAYOUT---------------- try 1 */
+/* 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  /* overflow-y: hidden; 
+} */
+
+/* body{
+    height: 100vh;
+} */
+
+header{
+    text-align: center;
+    /* padding: 2rem; makes containers diff width */
+    padding: 2em 0;
+}
+
+.container-one, .container-two{
+    width: 80%;
+}
+
+.container-one {
+    margin: auto;
+}
+
+.container-two{
+    margin: auto;
+    margin-top: 10%;
+    
+}
+
+/* .container-two{    
+    height: fit-content; 
+    margin: calc((100vh - 6em)*0.5*0.5) auto;  */
+    /* width: 90%; */
+    /* <--- this one is maling the block mid way    
+}*/
+
+
+
+/*-----flex--------*/
+
+.container-one{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img, p{
+    display: inline-block;      
+}
+
+p{
+    order:1;
+    text-align: center;
+    /* align-self: center; */
+    padding: 4% 2em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(100, 100, 100);
+
+    
+    
+}
+img{
+    order:2;
+    /* align-self: flex-end; */
+    /* align-content: flex-end; */
+}
+
+.author{
+    /* border:1px solid red; */
+    display: block;
+    margin-top:20px;
+  
+}
+
+/* -------------HOVER--------------------- */
+
+
+.love{
+    display:none;
+}
+
+.header:hover .life{
+    display:none;
+}
+
+.header:hover .love{
+    display:inline;
+}
+.line{
+    opacity: .2;
+}
+p:hover>.line{
+    opacity:1;
+    text-shadow: 0px .5px 2px #d3d3d3;
+} 
+/* animation */
+
+   
+   
+
+/* -----------------MEDIA QUERY----------- */
+
+@media (max-width:1000px) and (max-height: 700px){
+    
+    .container-one, .container-two{
+        width: 90%;
+        margin:auto;
+    }
+
+    .container-two{
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        }
+
+    p{
+        order:2;
+        margin:1em auto;
+        text-align: center;
+        
+        
+    }
+    img{       
+        order:1;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    .author{
+        margin-top:20px;
+    }
+
+    .life{
+        display: inline;
+        animation: t1 2s steps(6,end) infinite;
+      }
+      
+    .love{ 
+          display:inline; 
+          animation: t2 2s steps(6,end) infinite;
+    }
+      
+    @keyframes t2{
+        0%, 50%, 100%{
+          width:0ch;
+    }
+        60%, 90%{
+          width:5.7ch;
+    }
+    }
+    @keyframes t1{
+        0%, 50%, 100%{
+          width:0ch;
+    }
+        10%,40%{
+          width:5.7ch;
+    }
+    }
+      
+ .container-one{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    
+    
+}
+.line{
+    display: inline;
+}
+.life, .love{
+    /* top:10px; */
+    font-size: 1.5em;
+    font-weight: bolder;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    align-self: flex-end;
+    position: relative;
+  }
+
+.life{
+    /* border: 1px solid red; */
+    animation: t1 2s steps(6,end) infinite;
+  }
+  
+.love{  
+    /* border: 1px solid pink; */
+    animation: t2 2s steps(6,end) infinite;
+}
+  
+  @keyframes t2{
+    0%, 50%, 100%{
+      width:0ch;
+    }
+    60%, 90%{
+      width:5.7ch;
+    }
+  }
+  @keyframes t1{
+    0%, 50%, 100%{
+      width:0ch;
+    }
+    10%,40%{
+      width:5.7ch;
+    }
+  }
+  
+} 
+
