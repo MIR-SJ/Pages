@@ -152,9 +152,15 @@ img{
 .line{
     opacity: .2;
 }
+
+p>.line{
+    opacity:.2;
+    /* text-shadow: 0px .5px 2px #d3d3d3; */
+} 
+
 p:hover>.line{
     opacity:1;
-    text-shadow: 0px .5px 2px #d3d3d3;
+    /* text-shadow: 0px .5px 2px #d3d3d3; */
 } 
 /* animation */
 
@@ -271,6 +277,11 @@ p:hover>.line{
       width:5.7ch;
     }
   }
+
+  p>.line{
+    opacity:1;
+    
+} 
   
 } 
 
